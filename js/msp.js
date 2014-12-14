@@ -232,9 +232,11 @@ var MSP = {
                 SENSOR_DATA.kinematics[0] = data.getInt16(0, 1) / 10.0; // x
                 SENSOR_DATA.kinematics[1] = data.getInt16(2, 1) / 10.0; // y
                 SENSOR_DATA.kinematics[2] = data.getInt16(4, 1); // z
+                console.log('x:' + SENSOR_DATA.kinematics[0] + '   y:' + SENSOR_DATA.kinematics[1] + '   z:' + SENSOR_DATA.kinematics[2]);
                 break;
             case MSP_codes.MSP_ALTITUDE:
                 SENSOR_DATA.altitude = parseFloat((data.getInt32(0, 1) / 100.0).toFixed(2)); // correct scale factor
+                console.log('Alt:' + SENSOR_DATA.altitude);
                 break;
             case MSP_codes.MSP_ANALOG:
                 ANALOG.voltage = data.getUint8(0) / 10.0;

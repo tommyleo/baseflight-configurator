@@ -136,13 +136,14 @@ TABS.setup.initialize = function (callback) {
             heading_e = $('span.heading');
 
         function get_slow_data() {
+        	/*
             MSP.send_message(MSP_codes.MSP_ANALOG, false, false, function () {
                 bat_voltage_e.text(chrome.i18n.getMessage('initialSetupBatteryValue', [ANALOG.voltage]));
                 bat_mah_drawn_e.text(chrome.i18n.getMessage('initialSetupBatteryMahValue', [ANALOG.mAhdrawn]));
                 bat_mah_drawing_e.text(chrome.i18n.getMessage('initialSetupBatteryAValue', [ANALOG.amperage.toFixed(2)]));
                 rssi_e.text(chrome.i18n.getMessage('initialSetupRSSIValue', [((ANALOG.rssi / 1023) * 100).toFixed(0)]));
             });
-
+			*/
             MSP.send_message(MSP_codes.MSP_RAW_GPS, false, false, function () {
                 gpsFix_e.html((GPS_DATA.fix) ? chrome.i18n.getMessage('gpsFixTrue') : chrome.i18n.getMessage('gpsFixFalse'));
                 gpsSats_e.text(GPS_DATA.numSat);
